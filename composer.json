@@ -1,0 +1,49 @@
+{
+    "name": "buyanov/tanuki",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Buyanov Danila",
+            "email": "info@saity74.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {"Acme\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": { "Acme\\Tests\\": "tests/" }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "symplify/easy-coding-standard": "^8.1",
+        "phpstan/phpstan": "^0.12.32"
+    },
+    "scripts": {
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit --coverage-html ./report"
+        ],
+        "cs": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/ecs check"
+        ],
+        "fix": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/ecs check --fix"
+        ],
+        "phpstan": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/phpstan analyse src tests --level 7"
+        ]
+    },
+    "scripts-descriptions": {
+        "test": "Run all unit tests",
+        "cs": "Run check codestyle",
+        "fix": "Run check and fix codestyle",
+        "phpstan": "Run static analysis"
+    }
+}
