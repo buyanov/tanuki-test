@@ -18,16 +18,17 @@
 Чтобы исключить возможность обращения к внешнему ресурсу в основном потоке
 вынесем эту логику в отдельный объект и будем использовать планировщик
 
-#Composer scripts
+Composer scripts
+---
 
 запуск тестов
-composer test
+```composer test```
 
 запуск проверки код стайла
-composer cs
+```composer cs```
 
 запуск автоисправлений в кодстайле
-composer fix
+```composer fix```
 
 запуск статического анализатора phpstan
-composer phpstan
+```composer phpstan```
